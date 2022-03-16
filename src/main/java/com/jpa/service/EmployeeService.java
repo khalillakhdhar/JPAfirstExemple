@@ -19,8 +19,26 @@ public EmployeeModel create(EmployeeModel em)
 	
 
 }
+public List<EmployeeModel> read()
+{
+return employeeapi.findAll();	
+}
 
-	
+
+public EmployeeModel update(EmployeeModel em,int id)
+{
+	em.setId(id);
+	return employeeapi.save(em);
+
+}
+public void delete(int id)
+{
+	employeeapi.deleteById(id);
+}
+public List<EmployeeModel> searchRecrutement(String recrutement)
+{
+return employeeapi.findbyRecrutement(recrutement);
+}
 	
 	
 	
